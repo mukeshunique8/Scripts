@@ -1,0 +1,704 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: whitesmoke; */
+  margin: 10px;
+  font-size: 1em;
+  justify-content: center;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.wrapper{
+
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color:transparent;
+  margin-top: 30px;
+  
+  
+}
+
+
+
+/*NAV BAR CONTAINER*/
+.script-navbar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  column-gap: 15px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 3px 20px 5px 20px;
+  position: sticky;
+  top: 0;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  /* background: rgba(239, 243, 10, 0.4); */
+
+    background: rgba(245, 238, 238, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(0, 0, 0, 0.95);
+  border: none;
+
+  z-index: 1000;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.1s ease, transform 0.3s ease;
+}
+
+
+.script-navbar.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+a {
+  position: relative;
+  display: flex;
+  row-gap: 10px;
+  text-decoration: none;
+  color: #131213;
+  font-weight: bold;
+  text-align: center;
+  justify-content:space-around;
+  width:120px;
+  font-size: 0.8rem;
+
+  padding: 8px;
+  border-radius: 5px;
+  /* background-image: linear-gradient(135deg, #00e1ff, #e1ff3a); */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #89e991;
+  transition: all 0.5s ease-out;
+  z-index: -1;
+}
+
+a:hover:before {
+  left: 0;
+  transform: rotate(360deg);
+  background-color: #00ff00;
+  color: black;
+  
+}
+
+a:hover {
+  transform: scale(1.2);
+  background-color: #ec05c6;
+  color:whitesmoke;
+  color: black;
+
+}
+
+a.color1 {
+  /* Style for the first link */
+  background-image: linear-gradient(135deg, #43daee, #95ffff);
+  font-family:cursive;
+}
+
+a.color2 {
+  /* Style for the second link */
+  font-family:cursive;
+  background-image: linear-gradient(135deg, #d0ff00, #3aff7c);
+}
+
+a.color3 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(135deg, #eff306, #ffc508);
+}
+a.color4 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(155deg, #ec6868, #ec7f5e);
+}
+a.color5 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(155deg, #6eb0ee, #966be6);
+}
+a.color6 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(135deg, #fa3bfa, #966be6);
+  color: white;
+}
+a.color7 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(155deg, #f01f1f,#f01f1f);
+}
+a.color8 {
+  /* Style for the third link */
+  font-family:cursive;
+  background-image: linear-gradient(155deg, #51c26f,#f2e901);
+}
+
+
+/* Add more styles for other links as needed */
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.scripts p {
+  break-inside: avoid; /* Prevent <p> tags from breaking inside columns */
+}
+
+.section-container{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.scriptHeader {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding: 20px 0px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 1rem;
+
+  background: rgba(17, 211, 188, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+
+}
+
+.scriptHeader h1{
+  padding: 0px 20px 0px 20px;
+}
+
+.scripts{
+
+column-width: 250px;
+column-count: auto;
+
+}
+
+
+P {
+  font-size: 1rem;
+  /* border: 1px solid Black; */
+  
+  padding: 7px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  margin: 0px 10px 10px 10px;
+}
+
+p button {
+  width: 20px;
+  height: 20px;
+  border-radius: 25%;
+  position: relative;
+  left:10px;
+}
+
+
+
+
+/*flicker animation alaert*/
+
+.copied-button {
+  background-color: rgb(120, 226, 20);
+  transform: rotate(5deg);
+
+}
+
+/**/
+
+#sectionPG{
+  margin-top: 60px;
+}
+
+
+
+
+
+
+#section1,#section2,#section3,#section4,#section5,#section6,
+#section7,#section8,#section9,#section10,#section11,#section12,#section13,#section14,#section15,#section16,#section18,#section19{
+  background-color: white;
+  margin-bottom: 10px;
+  column-width: 250px; 
+  column-count: auto;
+  padding: 40px 0px 20px 0px;
+
+  background-color: hsla(0, 0%, 0%, 0); /* Pure transparent (black color with 0 opacity) */
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border: none;
+
+}  
+
+
+
+/* Example styles for the headers */
+#scriptHeader1,
+#scriptHeader2,
+#scriptHeader3,
+#scriptHeader4,
+#scriptHeader5,
+#scriptHeader6,
+#scriptHeader7,
+#scriptHeader8,
+#scriptHeader9,
+#scriptHeader10,
+#scriptHeader11,
+#scriptHeader12,
+#scriptHeader13 ,
+#scriptHeader14 ,
+#scriptHeader15,
+#scriptHeader16 {
+  font-size: 0.8rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white; /* Set font color to white */
+  -webkit-text-stroke: 1px black; /* Add text stroke */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Add text shadow */
+  /* Additional styles for padding, margin, etc. can be added here */
+}
+
+#scriptHeader1 {
+  background: linear-gradient(15deg, #2ecc71 0%, #3498db 100%);
+}
+
+#scriptHeader2 {
+  background: linear-gradient(15deg, #e74c3c 0%, #c0392b 100%);
+}
+
+#scriptHeader3 {
+  background: linear-gradient(15deg, #3498db 0%, #2c3e50 100%);
+}
+
+#scriptHeader4 {
+  background: linear-gradient(15deg, #f39c12 0%, #d35400 100%);
+}
+
+#scriptHeader5 {
+  background: linear-gradient(15deg, #8e44ad 0%, #2980b9 100%);
+}
+
+#scriptHeader6 {
+  background: linear-gradient(15deg, #16a085 0%, #1abc9c 100%);
+}
+
+#scriptHeader7 {
+  background: linear-gradient(15deg, #c0392b 0%, #e74c3c 100%);
+}
+
+#scriptHeader8 {
+  background: linear-gradient(15deg, #2980b9 0%, #3498db 100%);
+}
+
+#scriptHeader9 {
+  background: linear-gradient(15deg, #2ecc71 0%, #27ae60 100%);
+}
+
+#scriptHeader10 {
+  background: linear-gradient(15deg, #e67e22 0%, #f39c12 100%);
+}
+
+#scriptHeader11 {
+  background: linear-gradient(15deg, #d35400 0%, #e74c3c 100%);
+}
+
+#scriptHeader12 {
+  background: linear-gradient(15deg, #3498db 0%, #2980b9 100%);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+#space {
+  background-color: rgb(255, 255, 255);
+  height: 5px;
+
+}
+
+#space1 {
+  background-color: rgb(255, 255, 255);
+
+
+}
+
+#space2 {
+  background-color: rgb(255, 255, 255);
+  margin: 100px;
+
+}
+
+#sh1 {
+  background-color: #f3f729;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.sh1{
+  background-color: #f3f729;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+
+}
+
+/* White */
+
+#swhite {
+  background-color: rgb(27, 27, 27);
+  color: whitesmoke;
+  border: white solid 2px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-family: cursive;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+/* Red */
+#sred {
+  background-color: #e49292;
+}
+
+/* Green */
+#sgreen {
+  background-color: #6cee4b;
+}
+
+/* Blue */
+#sblue {
+  background-color: #9b9be2;
+}
+
+/* Yellow */
+#syellow {
+  background-color: #f3f729;
+}
+
+/* Orange */
+#sorange {
+  background-color: #f38d39;
+}
+
+/* Purple */
+#spurple {
+  background-color: #d88fd8;
+}
+
+/* Pink */
+#spink {
+  background-color: rgb(209, 147, 157);
+}
+
+/* Brown */
+#sbrown {
+  background-color: #c77575;
+}
+
+/* Gray */
+#sgray {
+  background-color: #808080;
+}
+
+/* Black */
+#sblack {
+  background-color: #362d2d;
+}
+
+/* Cyan */
+#scyan {
+  background-color: #7adada;
+}
+
+/* Magenta */
+#smagenta {
+  background-color: #fccdfc;
+}
+
+/* Indigo */
+#sindigo {
+  background-color: #a967d8;
+
+}
+
+/* Teal */
+#steal {
+  background-color: #5ecaca;
+}
+
+/* Lime */
+#slime {
+  background-color: #a8dda8;
+}
+
+/* Maroon */
+#smaroon {
+  background-color: #e29393;
+  color: white;
+  font-family: cursive;
+}
+
+/* Navy */
+#snavy {
+  background-color: #8585d3;
+  color: white;
+  font-family: cursive;
+}
+
+/* Olive */
+#solive {
+  background-color: #caca80;
+}
+
+/* Silver */
+#ssilver {
+  background-color: #C0C0C0;
+}
+
+/* Gold */
+#sgold {
+  background-color: #e0d076;
+}
+
+/* Coral */
+#scoral {
+  background-color: #dda995;
+}
+
+/* Violet */
+#sviolet {
+  background-color: #d1a5d1;
+}
+
+/* Aquamarine */
+#saquamarine {
+  background-color: #a0dac6;
+}
+
+/* Tomato */
+#stomato {
+  background-color: #be8c84;
+}
+
+/* Slate Gray */
+#sslategray {
+  background-color: #708090;
+}
+
+/* Lavender */
+#slavender {
+  background-color: #E6E6FA;
+}
+
+/* Forest Green */
+#sforestgreen {
+  background-color: #b8f317;
+}
+
+/* Salmon */
+#ssalmon {
+  background-color: #cc8f88;
+}
+
+/* Khaki */
+#skhaki {
+  background-color: #F0E68C;
+}
+
+/* Steel Blue */
+#ssteelblue {
+  background-color: #8cbbe2;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+  #section1, #section2, #section3,
+  #section4, #section5, #section6,
+  #section7, #section8, #section9,
+  #section10 {
+    column-count: auto;
+    column-width: 150px;
+  }
+  .script-navbar {
+
+        
+    column-gap: 15px;
+    height: auto;
+    align-items: center;
+    padding: 0px 5px;
+    position: fixed;
+    top: 15px;
+    background-color: rgb(236, 226, 226);
+    margin-bottom: 20px;
+    justify-content: center;
+  
+  }
+  
+a {
+  position: relative;
+  display: flex;
+  row-gap: 10px;
+  text-decoration: none;
+  color: #131213;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  width: auto;
+  font-size: 0.5rem;
+  align-items: center;
+
+
+  padding: 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(135deg, #00ff00, #ffff00);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+P {
+  font-size: 0.8rem;
+  /* border: 1px solid Black; */
+  padding: 7px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  margin: 0px 10px 10px 10px;
+}
+button {
+  width: 15px;
+  height: 15px;
+  border-radius: 25%;
+  position: relative;
+  left:10px;
+}
+  
+}
+
+@media (max-width: 480px) {
+
+  .scriptHeader {
+
+    font-size: 10px;
+  
+  }
+
+
+  #section1, #section2, #section3,
+  #section4, #section5, #section6,
+  #section7, #section8, #section9,
+  #section10 {
+    column-count: auto;
+    column-width: 150px;
+    padding: 0px;
+
+  }
+  .script-navbar{
+    padding-bottom: 20px;
+    height: auto;
+  }
+  a{
+    font-size: 0.5rem;
+    height: auto;
+  }
+  P {
+    font-size: 0.6rem;
+    /* border: 1px solid Black; */
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    margin: 0px 10px 10px 10px;
+  }
+  button {
+    width: 12px;
+    height: 12px;
+    border-radius: 25%;
+    position: relative;
+    left:10px;
+  }
+  
+}
+
+/* Media Queries */
+
+/* Apply green background to the ::after pseudo-element */
+
+#answerText{
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+#answerText:active {
+  background-color: green;
+}
+
+.chooseOption label{
+
+}
+
+input[type="radio" i] {
+  width: 15px; /* Set the width of the radio button */
+  height: 15px; /* Set the height of the radio button */
+  transform: scale(1.5); /* Scale the radio button by 1.5 times */
+  background-color: initial;
+  cursor: pointer;
+  appearance:auto;
+  box-sizing: border-box;
+  margin: 5px 3px 0px 5px;
+  padding: initial;
+  border: initial;
+}

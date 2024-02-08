@@ -1,0 +1,299 @@
+
+.cal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  background-color: rgb(196, 216, 233);
+    height: auto;
+  padding: 30px;
+  border-radius: 15px 15px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    background: black;
+    height: auto;
+    padding: 30px;
+    border-radius: 15px ;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+  }
+  
+  .CFU{
+
+    background: rgba(236, 236, 236, 0.2);
+    border: 2px solid white;
+    border: none;
+    border-radius: 15px 10px;
+    margin: 20px;
+
+  }
+  
+  
+  .CFU {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    text-align: center;
+  }
+  
+ .adiv{
+    background: rgba(87, 223, 75, 0.6);
+
+  }
+  .qdiv{
+    background: rgba(245, 107, 107, 0.932);
+    color: white;
+
+  }
+
+  .qdiv, .adiv{ 
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px white solid;
+    border: none;
+    padding: 10px;
+    border-radius: 15px 7px;
+  }
+  .qdiv p , .adiv p {
+    color:black;
+    font-family: cursive;
+    font-weight: 700;
+    width: 100%;
+    height:70px;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.1rem;
+    border: none;
+  }
+  .qdiv p {
+    color: white;
+
+  }
+  #questionContainer p{
+    text-align: center;
+  }
+
+  .cal-container button.regenerate-button {
+    width: 100px;
+    height: 25px;
+    background-color: black;
+    color: white;
+    border-radius: 15px 10px;
+    font-size: 1.6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cal-container button.regenerate-button:hover {
+    background-color: #091921;
+    color: white;
+  }
+  
+  .cal-container .question-copy-button,
+  .cal-container .answer-copy-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding:  20px;
+    border-radius: 15px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+  }
+  
+  .cal-container .question-copy-button:hover,
+  .cal-container .answer-copy-button:hover {
+    background-color: #091921;
+    color: white;
+  }
+
+  .cal-container button.regenerate-button,
+.cal-container .question-copy-button,
+.cal-container .answer-copy-button {
+  transition: background-color 0.5s, color 0.5s;
+  /* Other styles... */
+}
+
+.cal-container button.regenerate-button:active,
+.cal-container .question-copy-button:active,
+.cal-container .answer-copy-button:active {
+  background-color: rgb(11, 248, 11);
+  color: white;
+  transform: scale(1.1);
+  transition-timing-function:cubic-bezier(0.225, 0.05, 0.55, 0.95);
+}
+
+
+  /* ********************************* */
+    
+  .cal-container .calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  .cal-container .calculator .value {
+    grid-column: span 4;
+    height: 140px;
+    width: 100%;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    resize: none;
+}
+
+.cal-container .calculator span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cal-container .calculator span.clear {
+    grid-column: span 2;
+}
+
+.cal-container .calculator span.plus {
+    grid-row: span 2;
+    height: 150px;
+}
+
+.cal-container .calculator span.equal {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cal-container .calculator span:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cal-container .calculator span:active {
+    background: #14ff47;
+    color: #192f00;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+  /* *************************************** */
+  .GREEK {
+    background: rgba(236, 236, 236, 0.2);
+    border: 2px solid white;
+    border-radius: 15px 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 550px;
+    overflow-y: auto;
+}
+
+.GREEK::-webkit-scrollbar {
+    width: 5px;
+}
+
+.GREEK::-webkit-scrollbar-thumb {
+    background-color:white;
+    border-radius: 10px;
+}
+
+.GREEK::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+  .greekText{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .greekformula{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .greekformula .symbol-button{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+  
+  }
+    .symbol-button {
+      font-size: 18px;
+      padding: 6px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #050505;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .symbol-button:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #16c03b;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      transition: transform 0.1s ease-out;
+    }
+
+    .symbol-button:active:after {
+      transform: translate(-50%, -50%) scale(20);
+    }
