@@ -1,6 +1,8 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+
 }
 
  body {
@@ -10,7 +12,10 @@
     flex-direction: column;
     font-family:'Times New Roman', Times, serif;
     background: rgba(255, 255, 255, 0.925);
-
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -24,6 +29,7 @@
     row-gap: 5px;
     padding: 20px;
     height: 100%;
+    width:100%;
       
     
 }
@@ -33,9 +39,8 @@ header{
     align-items: center;
     font-size: 2.5rem;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px;
-    margin-top: 100px;
 
 
     background: rgba(255, 255, 255, 0.925);
@@ -44,6 +49,12 @@ header{
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   
+}
+
+header a{
+    display: flex;
+    justify-content: right;
+    text-decoration: none;
 }
 
 .nameTopic{
@@ -68,6 +79,7 @@ header{
     width: 90%;
     justify-content: center;
     margin: auto;
+    padding-top: 30px;
 }
 
 .nameTopic input{
@@ -175,13 +187,15 @@ header{
     margin: auto;
     justify-content: center;
     box-sizing: content-box;
-    background: rgba(255, 255, 255, 0.42);
+    /* background: rgba(255, 255, 255, 0.42); */
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     padding: 10px;
     padding-bottom: 30px;
+    background: linear-gradient(to left,#ab89cd ,rgb(112, 223, 240));
+
 }
 
 .previousReports h1{
@@ -215,24 +229,31 @@ header{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background:rgb(93, 149, 221);
+    /* background:rgb(93, 228, 176); */
     color: black;
     border-radius: 10px;
     align-items: center;
    justify-content: center;
    row-gap: 10px;
    width: 90%;
+   background: linear-gradient(to right, #58b1ed, #99f5c0);
+
 
 }
 
 .previousReport h3{
    
-    background:#e9ec20;
+    background:#ffffe9;
     color: black;
     padding: 10px;
   border-radius: 5px;
   
 
+}
+
+h2{
+    font-size: 1rem;
+   
 }
 
 .previousReport p{
@@ -332,6 +353,34 @@ header{
 
 /*--------------------------------------------------*/
 
+
+.tutorComments{
+
+    display: flex;
+    /* flex-direction: column; */
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    column-gap: 20px;
+    padding: 20px;
+    padding-bottom: 10px;
+    row-gap: 20px;
+    align-items:center ;
+    justify-content: space-evenly;
+
+
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+
+}
+.tutorComments select{
+    width: 50%;
+}
+
 .parts{
     display: grid;
     grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
@@ -374,6 +423,15 @@ header{
     margin-top: 10px;
 }
 
+
+.points{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /* justify-content: center; */
+}
+
 .points input{
     text-align: center;
     font-style: italic;
@@ -388,7 +446,7 @@ header{
     align-items: center;
 }
 .result input{
-    max-width: 50px;
+    max-width: 80px;
     justify-content: center;
     justify-self: center;
     text-align: center;
@@ -457,6 +515,12 @@ header{
     overflow-wrap:normal; /* Wrap the text at word boundaries */
 
 }
+select{
+    font-size: 1rem;;
+    text-align: center;    
+    font-family: cursive;
+    border: none;
+}
 
 
 .buttonsClick{
@@ -465,7 +529,35 @@ header{
     justify-content: space-around;
 
 }
+#btn-tutorcmt{
+    background-color:rgb(6, 100, 207) ;
+    color:  white;
+    width: 50px;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+ }
 
+
+
+ @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      background-color: #47eb06;
+    }
+  }
+
+  .pop-effect {
+    animation: pop 0.3s ease;
+  }
 
   #copy-btn, #con-btn{
     background: linear-gradient(to right,#196BCA ,#6433E0);
@@ -508,10 +600,10 @@ header{
 /* backgorund clors */
 
 .fluid-background {
-    background: linear-gradient(260deg, #87e7cf,#bf9af1 , #95e7ab, #81e7d6, #74c0ec, #c0ee8b, #f59999, #f8e281, #91fd87, #f3bea6);
+    background: linear-gradient(260deg, #87e7cf,#bf9af1 , #95e7ab, #6e8b87, #74c0ec, #c0ee8b, #f59999, #f8e281, #91fd87, #f3bea6);
     background-size: 1000% 1000%;
 
-    animation: AnimationName 46s ease infinite;
+    animation: AnimationName 60s ease-in-out infinite;
 }
 
 @keyframes AnimationName {
@@ -600,9 +692,22 @@ header{
 
 
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 1350px) {
 
 
+
+
+
+
+    .fluid-background{
+        display: flex;
+        flex-direction: column;
+    }
+
+   
+
+
+    
     .nameTopic label{
         font-size: 1rem;
     }
@@ -625,4 +730,52 @@ header{
             justify-content: center;
         }
     
+  }
+
+
+
+
+@media only screen and (max-width: 920px) {
+
+
+    .nameTopic label{
+        font-size: 0.8rem;
+        margin-right: 10px;
+    }
+
+    .question h1{
+
+        font-size: 0.8rem;
+    }
+    .parts{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+        .points{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #plus-btn,#minus-btn{
+            width: 50px;
+            height: 50px;
+            border-radius: 25%;
+            position: relative;
+            left:10px;
+            margin-top: 5px;
+        }
+    
+            #con-btn,#copy-btn{
+                width: auto;
+                height: auto;
+
+            }
+       
+          
+
   }

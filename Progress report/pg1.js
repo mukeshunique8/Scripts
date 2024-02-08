@@ -207,30 +207,39 @@ document.getElementById("pgReport").value = concatenated;
  // Calculate the result percentage
  let resultPercentage = Math.round((exitPointsValue / (exitValue * 3)) * 100);
 
- // Display the result in the input area
- document.getElementById("result-el").value = resultPercentage + "%";
+ // Check if the result is a valid number
+if (isNaN(resultPercentage)) {
+    document.getElementById("result-el").value = "Oops";
+    
+} else {
+    // Display the result in the input area
+    document.getElementById("result-el").value = resultPercentage + "%";
+}
 
- // Update the progress bar width based on the result percentage
- let progressBar = document.querySelector('.progress-bar');
- progressBar.style.width = resultPercentage + "%";
+// Update the progress bar width based on the result percentage
+let progressBar = document.querySelector('.progress-bar');
+progressBar.style.width = resultPercentage + "%";
 
- // Set the text status based on the result percentage
- let masteryStatus = progressBar.querySelector('.mastery-status');
- if (resultPercentage >= 67) {
-     masteryStatus.textContent = "Ready";
-     progressBar.style.backgroundColor = 'green';
- } else if (resultPercentage >= 60 && resultPercentage <= 66) {
-     masteryStatus.textContent = "Approaching";
-     progressBar.style.backgroundColor = 'orange';
- } else if (resultPercentage >=0 && resultPercentage <= 59){
-     masteryStatus.textContent = "Developing";
-     progressBar.style.backgroundColor = 'red';
- }else{
-    masteryStatus.textContent = "Beginning";
-    //  progressBar.style.backgroundColor = 'black';
-     masteryStatus.style.color = 'white';
- }
-
+// Set the text status based on the result percentage
+let masteryStatus = progressBar.querySelector('.mastery-status');
+if (!isNaN(resultPercentage)) {
+    if (resultPercentage >= 67) {
+        masteryStatus.textContent = "Ready";
+        progressBar.style.backgroundColor = 'green';
+    } else if (resultPercentage >= 60 && resultPercentage <= 66) {
+        masteryStatus.textContent = "Approaching";
+        progressBar.style.backgroundColor = 'orange';
+    } else if (resultPercentage >= 0 && resultPercentage <= 59) {
+        masteryStatus.textContent = "Developing";
+        progressBar.style.backgroundColor = 'red';
+    } else {
+        masteryStatus.textContent = "Beginning";
+        //  progressBar.style.backgroundColor = 'black';
+        masteryStatus.style.color = 'white';
+    }
+} else {
+    masteryStatus.textContent = ""; // Clear the text if result is not a valid number
+}
  // Create a new progress report object
  var reportObj = {
     header: input3,
@@ -246,4 +255,44 @@ displayReports();
 }
 
 
+
+// document.body.addEventListener('click', function(event) {
+//     var navbar = document.getElementById('navbar');
+//     var target = event.target;
+
+//     // Check if the clicked element is not part of the navbar
+//     if (!navbar.contains(target)) {
+//         // Toggle the visibility of the navbar
+//         navbar.style.display = (navbar.style.display === 'flex') ? 'none' : 'flex';
+//     }
+// });
+
+
+// Function to copy the selected option to clipboard
+function copySelectedComment() {
+    // Your existing copy function
+    var selectedComment = document.getElementById("commentOptions").value;
+    copyTextToClipboard(selectedComment);
+
+    // Add the pop effect
+    var copyButton = document.getElementById("btn-tutorcmt");
+    copyButton.classList.add("pop-effect");
+
+    // Remove the pop effect after the animation ends
+    copyButton.addEventListener("animationend", function () {
+      copyButton.classList.remove("pop-effect");
+    });
+  }
+
+  // Function to copy text to clipboard
+  function copyTextToClipboard(text) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    alert("Copied to clipboard: " + text);
+  }
 

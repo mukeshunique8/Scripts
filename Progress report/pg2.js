@@ -43,7 +43,7 @@ function displayReports() {
     reportsContainer.innerHTML = "";
 
     // Loop through the existing reports and create divs for each
-    existingReports.forEach(function(report, index) {
+    existingReports.forEach(function (report, index) {
         var reportDiv = document.createElement("div");
         reportDiv.classList.add("previousReport");
 
@@ -70,7 +70,7 @@ function displayReports() {
         var copyButton = document.createElement("button");
         copyButton.textContent = "Copy";
         copyButton.classList.add("copy-button");
-        copyButton.addEventListener("click", function() {
+        copyButton.addEventListener("click", function () {
             copyPreviousReport(reportDiv);
         });
         buttonContainer.appendChild(copyButton);
@@ -79,7 +79,7 @@ function displayReports() {
         var deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.classList.add("delete-button");
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", function () {
             deleteReport(index);
         });
         buttonContainer.appendChild(deleteButton);
@@ -89,7 +89,7 @@ function displayReports() {
         updateButton.textContent = "Update";
         updateButton.id = "update-btn"; // Add an id for reference
         updateButton.classList.add("update-button");
-        updateButton.addEventListener("click", function() {
+        updateButton.addEventListener("click", function () {
             // Get the progress report content associated with the clicked button
             var progressElement = reportDiv.querySelector("p");
 
@@ -104,7 +104,7 @@ function displayReports() {
             updateButton.removeEventListener("click", updateButtonClick);
 
             // Save the updated content when the Save button is clicked
-            updateButton.addEventListener("click", function() {
+            updateButton.addEventListener("click", function () {
                 // Disable contentEditable for the progress element
                 progressElement.contentEditable = false;
 
@@ -143,6 +143,7 @@ function displayReports() {
 
 
 
+
 function copyPreviousReport(reportDiv) {
     // Get the progress report content associated with the clicked button
     var progressElement = reportDiv.querySelector("p");
@@ -175,8 +176,9 @@ function deleteReport(index) {
     // Retrieve existing reports from local storage
     var existingReports = JSON.parse(localStorage.getItem("reports")) || [];
 
-    // Remove the report at the specified index
-    existingReports.splice(index, 1);
+    // Use the reversed index to remove the correct report
+    var reversedIndex = existingReports.length - 1 - index;
+    existingReports.splice(reversedIndex, 1);
 
     // Save the updated reports back to local storage
     localStorage.setItem("reports", JSON.stringify(existingReports));
@@ -185,13 +187,13 @@ function deleteReport(index) {
     displayReports();
 }
 
-// Function to update the content of a report in local storage
 function updateReportContent(index, updatedContent) {
     // Retrieve existing reports from local storage
     var existingReports = JSON.parse(localStorage.getItem("reports")) || [];
 
-    // Update the progress report content at the specified index
-    existingReports[index].progressReport = updatedContent;
+    // Use the reversed index to update the correct report
+    var reversedIndex = existingReports.length - 1 - index;
+    existingReports[reversedIndex].progressReport = updatedContent;
 
     // Save the updated reports back to local storage
     localStorage.setItem("reports", JSON.stringify(existingReports));
@@ -202,3 +204,5 @@ function updateReportContent(index, updatedContent) {
 
 // Display existing reports on page load
 displayReports();
+
+

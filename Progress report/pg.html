@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Report</title>
+    <link rel="stylesheet" href="pg.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/work-alt.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="logoPg.png"/>
+    <!-- <link rel="stylesheet" href="../scripts.css"> -->
+  
+</head>
+<body>
+    <div class="fluid-background">
+
+
+        
+        <!-- <div class="script-navbar" id="navbar">
+            <a href='../scripts.html#section1' class="color1">TOOLS</a>
+            <a href='../scripts.html#section2' class="color1">MICROPHONE</a>
+            <a href='../scripts.html#section3' class="color1">WELCOME / TOPIC </a>
+            <a href='../scripts.html#section5' class="color2">FREQUENT</a>
+            <a href='../scripts.html#section15' class="color8">Encouraging</a>
+            <a href='../scripts.html#section13' class="color5">APOLOGIES</a>
+            <a href='../scripts.html#section11' class="color7">Notifications & Scenarios</a>
+            <a href='../scripts.html#section14' class="color4">END SCRIPTS</a>
+            <a href='../scripts.html#section12' class="color4">POLL</a>
+            <a href='../scripts.html#section18' class="color6">ARE YOU?</a>
+            <a href='../scripts.html#section6' class="color3">I & WE</a>
+            <a href='../scripts.html#section7' class="color3">YOU DO</a>
+            <a href='../scripts.html#section16' class="color5">Doubts</a>
+            <a href='../scripts.html#section8' class="color2">POINTS</a>
+            <a href='../scripts.html#section9' class="color2">APPRECIATION</a>
+            <a href='../scripts.html#section10' class="color3">EXIT TICKET</a>
+            <a href='../scripts.html#section17' class="color6">CALCULATOR</a>
+            <a href='../scripts.html' class="color8">Scripts</a>
+    
+        </div> -->
+
+    <!-- <header>
+        
+        <h3>Progress Report</h3>
+
+        
+    
+    </header> -->
+    
+
+    <div class="nameTopic">
+        <div>
+            <label >~ Student  Name ~</label>
+            <input id="studentName" type="text" >
+        </div>
+        <div>
+            <label >Lesson Objective</label>
+            <input id="topic" type="text" >
+        </div>
+    </div>
+
+    
+
+    <div class="question">
+
+        <div class="tutor">
+            <h1>TUTOR ASSISTANCE</h1>
+            <P id="tutor-el">0</P>
+            <button id="plus-btn" onclick="increment1()">+</button><br>
+            <button  id="minus-btn" onclick="decrement1()">-</button>
+        </div>
+      
+        <div class="independent">
+            <h1>INDEPENDENT</h1>
+            <P id="independent-el">0</P>
+            <button  id="plus-btn" onclick="increment2()">+</button><br>
+            <button id="minus-btn" onclick="decrement2()">-</button>
+        </div>
+        <div class="exit">
+            <h1>EXIT</h1>
+            <P id="exit-el">0</P>
+            <button  id="plus-btn" onclick="increment3()">+</button><br>
+            <button id="minus-btn" onclick="decrement3()">-</button>
+        </div>
+
+        <div class="exitPoints">
+            <h1>Exit-Points</h1>
+            <P id="exitPoints-el">0</P>
+            <button  id="plus-btn" onclick="increment4()">+</button><br>
+            <button id="minus-btn" onclick="decrement4()">-</button>
+        </div>
+        
+        <div class="bonus">
+            <h1>BONUS</h1>
+            <P id="bonus-el">0</P>
+            <button id="plus-btn" onclick="increment5()">+</button><br>
+            <button id="minus-btn" onclick="decrement5()">-</button>
+        </div>
+
+    </div>
+
+
+    
+    <div class="footer">
+
+
+        <div class="parts">
+
+            <div class="able">
+                <h2>ABLE</h2>
+                <p>(The Student was able ~)</p>
+                <input id="able-el"  type="text" >
+            </div>
+            <div class="Difficulty">
+                <h2>DIFFICULTY</h2>
+                <p>(The Student faced difficulty ~)</p>
+                <input  id="difficulty-el" type="text" >
+            </div>
+            
+            <div class="points">
+                <h2>Points  </h2>
+                <p>*</p>
+                <input id="points-el" type="text" >
+            </div>
+            
+            <div class="result">
+                <h2>Result  </h2>
+                <input id="result-el" type="text" >
+                <div class="progress-bar">
+                    <p class="mastery-status"></p>
+                </div>
+
+            </div>
+
+                                            
+        </div>
+
+        <div class="tutorComments">
+            <h3>Tutor Comments : </h3>
+        
+            <!-- Select element with multiple options -->
+            <!-- <label for="commentOptions">Select Comment:</label> -->
+
+            <select id="commentOptions">
+                <option value="none" selected>~</option>
+                
+                <option value="The tutor faced portal issues during the session.">The tutor faced portal issues during the session.</option>
+                <option value="The tutor enabled one-way audio as per the student's request.">The tutor enabled one-way audio as per the student's request.</option>
+                <option value="The Tutor enabled the microphone as per the Student's request.">The Tutor enabled the microphone as per the Student's request.</option>
+                <option value="The tutor changed the topic as per the student's request.">The tutor changed the topic as per the student's request.</option>
+                <option value="The tutor ended the session as per the student's request.">The tutor ended the session as per the student's request.</option>
+                <option value="The Tutor posted the next topic as the Student completed the maximum number of questions in the scheduled topic.">The Tutor posted the next topic as the Student completed the maximum number of questions in the scheduled topic.</option>
+                <option value="~">~</option>
+                <option value="The student was playful during the session.">The student was playful during the session.</option>
+                <option value="The student was unresponsive during the session.">The student was unresponsive during the session.</option>
+                <option value="The Student went offline and didn't rejoin the session.">The Student went offline and didn't rejoin the session.</option>
+                <option value="The student went offline at _ minutes.">The student went offline at _ minutes.</option>
+                <option value="The student went offline in the last 3 minutes of the session.">The student went offline in the last 3 minutes of the session.</option>
+                <option value="The student was unresponsive throughout the session.">The student was unresponsive throughout the session.</option>
+                <option value="The student joined on the _th minute of the session.">The student joined on the _th minute of the session.</option>
+                <option value="The session continued with chat as the student faced some technical issues.">The session continued with chat as the student faced some technical issues.</option>
+                <option value="As the Student faced technical difficulties with the microphone, the session continued with chat.">As the Student faced technical difficulties with the microphone, the session continued with chat.</option>
+                <option value="~">~</option>
+                <option value="The Student did not attend the session.">The Student did not attend the session.</option>
+                <option value="The Student joined the session and went offline.">The Student joined the session and went offline.</option>
+                <option value="The Student joined the session and requested to end it.">The Student joined the session and requested to end it.</option>
+                <option value="The session was briefly disrupted due to technical issues.">The session was briefly disrupted due to technical issues.</option>
+                <option value="The Student joined the session and requested to reschedule the session.">The Student joined the session and requested to reschedule the session.</option>
+                <option value="The session was briefly disrupted due to technical issues from Tutor’s side.">The session was briefly disrupted due to technical issues from Tutor’s side.</option>
+                <option value="The Student joined the session and remained unresponsive throughout the session.">The Student joined the session and remained unresponsive throughout the session.</option>
+                <option value="The Student joined the session and requested to need help with the other subject.">The Student joined the session and requested to need help with the other subject.</option>
+                <option value="The Student was late to the class. The session was briefly disrupted due to technical issue">The Student was late to the class. The session was briefly disrupted due to technical issue</option>
+                <option value="The Student did not clearly articulate their point of need and did not provide specific and accurate online curriculum details.">The Student did not clearly articulate their point of need and did not provide specific and accurate online curriculum details.</option>
+
+
+                    <!-- Add more options as needed -->
+            </select>
+        
+            <!-- Display the selected option -->
+            <!-- <p id="selectedComment"></p> -->
+        
+            <!-- Copy button -->
+            <button id="btn-tutorcmt" onclick="copySelectedComment()">Copy</button>
+        </div>
+        
+
+
+        <div class="pgGenerator">
+            <div class="buttonsClick">
+                <button id="con-btn" onclick="concatenatedValues()"><span></span>Generate</button>
+                <button id="copy-btn" onclick="copyText()">COPY <br><span></span></button>
+            </div>
+            <textarea id="pgReport"></textarea>
+        </div>
+
+
+        <div class="previousReports">
+            <!-- <button id="con-btn" onclick="generateReport()">Save Report</button> -->
+            <h1>Previous Reports</h1>
+            <!-- Add a div for the button container -->
+            <div id="reports-container"></div>
+        </div>
+
+        </div>
+    </div>
+    <script src="pg1.js">  </script>
+    <script src="pg2.js">  </script>
+</body>
+</html>

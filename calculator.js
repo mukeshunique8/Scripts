@@ -201,6 +201,8 @@ function toggleKeyboardEventListener(enable) {
 function keyboardEventListener(event) {
     var keyValue = event.key;
 
+
+    
     // Handle keyboard input
     if (
         (!isNaN(keyValue) || keyValue === '.' || ['+', '-', '*', '/', 'Enter', '='].includes(keyValue) || (keyValue === 'c' && copyButtonClicked)) &&
@@ -231,6 +233,26 @@ function keyboardEventListener(event) {
         event.stopPropagation(); // Stop the event from propagating further
     }
 }
+
+
+// Event listener for mouse click on equal button
+var equalButton = document.querySelector('.equal');
+equalButton.addEventListener('click', function(event) {
+    // Generate question and answer
+    generateQuestion();
+    generateAnswer();
+    
+    // Copy question if not already copied
+    if (!copyButtonClicked) {
+        copyQuestion();
+        copyButtonClicked = true;
+    }
+});
+
+// Rest of your existing code...
+
+
+
 
 // Click event listener to toggle the keyboard event listener
 document.addEventListener("click", function (event) {

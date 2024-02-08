@@ -6,11 +6,13 @@
 
 body {
   /* background: whitesmoke; */
-  margin: 10px;
-  font-size: 1em;
+  /* margin: 10px; */
+  font-size: 1rem;
   justify-content: center;
   display: flex;
+  flex-direction: column;
   overflow-x: hidden;
+  margin: auto;
 }
 
 .wrapper{
@@ -19,7 +21,7 @@ body {
   flex-direction: column;
   padding: 30px;
   background-color:transparent;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   
   
 }
@@ -163,6 +165,13 @@ a.color8 {
   background-image: linear-gradient(155deg, #51c26f,#f2e901);
 }
 
+a.colorpg{
+  background-image: linear-gradient(90deg, #01f141,#0186f2);
+  font-size: 1.2rem;
+  font-family: cursive;
+
+}
+
 
 /* Add more styles for other links as needed */
 
@@ -215,7 +224,7 @@ column-count: auto;
 
 
 P {
-  font-size: 1rem;
+  font-size: 0.9rem;
   /* border: 1px solid Black; */
   
   padding: 7px;
@@ -564,6 +573,10 @@ p button {
 
 @media (max-width: 768px) {
 
+
+
+  
+
   #section1, #section2, #section3,
   #section4, #section5, #section6,
   #section7, #section8, #section9,
@@ -571,6 +584,7 @@ p button {
     column-count: auto;
     column-width: 150px;
   }
+/*   
   .script-navbar {
 
         
@@ -584,7 +598,7 @@ p button {
     margin-bottom: 20px;
     justify-content: center;
   
-  }
+  } */
   
 a {
   position: relative;
