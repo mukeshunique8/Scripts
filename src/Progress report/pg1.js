@@ -98,20 +98,23 @@ function copyText(){
 /*-------------------------------------------------------*/
 
 function concatenatedValues(){
+
+
+
 let space = " "
 let quotes = '"'
 let dot = "."
-let input1 = document.getElementById("studentName").value
+let input1 = document.getElementById("studentName").value.trim();
 let input2 = 'worked on the topic'
-let input3 = document.getElementById("topic").value
+let input3 = document.getElementById("topic").value.trim()
 let tutorValue = parseInt(document.getElementById("tutor-el").textContent)
 let independentValue = parseInt(document.getElementById("independent-el").textContent)
 let exitValue = parseInt(document.getElementById("exit-el").textContent)
 let exitPointsValue = parseInt(document.getElementById("exitPoints-el").textContent)
 let bonusValue = parseInt(document.getElementById("bonus-el").textContent)
 let ppValue = parseInt(document.getElementById("points-el").value) || 0; // Ensure ppValue is 0 if not entered
-let ablePart = document.getElementById("able-el").value
-let difficultyPart = document.getElementById("difficulty-el").value
+let ablePart = document.getElementById("able-el").value.trim()
+let difficultyPart = document.getElementById("difficulty-el").value.trim()
 
 let input4 = "" /*Tutor & Independent*/
 let input5 = "" /*ABle &Difficulty*/
@@ -199,52 +202,36 @@ if(ppValue === 0){
   input8 ="Participation Points: "+ppValue+"."
 }
 
+let resultPercentage = Math.round((exitPointsValue / (exitValue * 3)) * 100);
 
-var concatenated = input1+space+input2+space+quotes+input3+dot+quotes+space+input4+input5+input6+input7+input8;
+if( input1 !=="" && input3 !== ""){
+
+
+
+    var concatenated = input1+space+input2+space+quotes+input3+dot+quotes+space+input4+input5+input6+input7+input8;
+    
 document.getElementById("pgReport").value = concatenated;
 
+// Calculate the result percentage
 
- // Calculate the result percentage
- let resultPercentage = Math.round((exitPointsValue / (exitValue * 3)) * 100);
-
- // Check if the result is a valid number
+// Check if the result is a valid number
 if (isNaN(resultPercentage)) {
-    document.getElementById("result-el").value = "Oops";
-    
+   document.getElementById("result-el").value = "Oops";
+   
 } else {
-    // Display the result in the input area
-    document.getElementById("result-el").value = resultPercentage + "%";
+   // Display the result in the input area
+   document.getElementById("result-el").value = resultPercentage + "%";
 }
 
-// Update the progress bar width based on the result percentage
-let progressBar = document.querySelector('.progress-bar');
-progressBar.style.width = resultPercentage + "%";
+ // Update progress bar and color
+ updateProgress(resultPercentage);
 
-// Set the text status based on the result percentage
-let masteryStatus = progressBar.querySelector('.mastery-status');
-if (!isNaN(resultPercentage)) {
-    if (resultPercentage >= 67) {
-        masteryStatus.textContent = "Ready";
-        progressBar.style.backgroundColor = 'green';
-    } else if (resultPercentage >= 60 && resultPercentage <= 66) {
-        masteryStatus.textContent = "Approaching";
-        progressBar.style.backgroundColor = 'orange';
-    } else if (resultPercentage >= 0 && resultPercentage <= 59) {
-        masteryStatus.textContent = "Developing";
-        progressBar.style.backgroundColor = 'red';
-    } else {
-        masteryStatus.textContent = "Beginning";
-        //  progressBar.style.backgroundColor = 'black';
-        masteryStatus.style.color = 'white';
-    }
-} else {
-    masteryStatus.textContent = ""; // Clear the text if result is not a valid number
-}
- // Create a new progress report object
- var reportObj = {
-    header: input3,
-    generatedTime: new Date().toLocaleString(),
-    progressReport: concatenated
+
+// Create a new progress report object
+var reportObj = {
+   header: input3,
+   generatedTime: new Date().toLocaleString(),
+   progressReport: concatenated
 };
 
 // Save the report in local storage or any other storage mechanism
@@ -252,20 +239,39 @@ saveReport(reportObj);
 
 // Display the saved reports
 displayReports();
+    
+}
+else{
+    alert("Please Fill the Student Name & Lesson Objective")
+}
+
 }
 
 
 
-// document.body.addEventListener('click', function(event) {
-//     var navbar = document.getElementById('navbar');
-//     var target = event.target;
+// Function to update progress bar and color
+function updateProgress(resultPercentage) {
+    let masteryStatus = document.getElementById('mastery-status');
+    // Set the width of the progress bar
+    masteryStatus.style.width = resultPercentage + '%';
 
-//     // Check if the clicked element is not part of the navbar
-//     if (!navbar.contains(target)) {
-//         // Toggle the visibility of the navbar
-//         navbar.style.display = (navbar.style.display === 'flex') ? 'none' : 'flex';
-//     }
-// });
+    // Remove any existing color classes
+    masteryStatus.classList.remove('bg-green-500', 'bg-orange-500', 'bg-red-500', 'bg-gray-500');
+
+    // Set the background color based on the result percentage
+    if (resultPercentage > 67) {
+        masteryStatus.classList.add('bg-green-500');
+    } else if (resultPercentage >= 60 && resultPercentage <= 67) {
+        masteryStatus.classList.add('bg-orange-500');
+    } else if (resultPercentage >= 0 && resultPercentage <= 59) {
+        masteryStatus.classList.add('bg-red-500');
+    } else {
+        masteryStatus.classList.add('bg-gray-500');
+    }
+}
+
+
+
 
 
 // Function to copy the selected option to clipboard

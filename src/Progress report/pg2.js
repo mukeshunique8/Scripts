@@ -3,6 +3,8 @@
 function generateReport() {
     // Your existing code for generating progress report
 
+
+
     // Create a new progress report object
     var reportObj = {
         header: document.getElementById("topic").value,
@@ -45,16 +47,19 @@ function displayReports() {
     // Loop through the existing reports and create divs for each
     existingReports.forEach(function (report, index) {
         var reportDiv = document.createElement("div");
-        reportDiv.classList.add("previousReport");
+        reportDiv.classList.add("previousReport", "rounded-lg","flex", "space-y-2","flex-col","p-3", "m-1","bg-white", "w-[450px]","h-[280px]","text-sm","backdrop-blur-lg");
 
         // Add report header as h3 element
         var headerElement = document.createElement("h3");
         headerElement.textContent = report.header;
+        headerElement.classList.add("font-bold","text-blue-800","text-sm")
         reportDiv.appendChild(headerElement);
 
         // Add generated time as h2 element
         var timeElement = document.createElement("h2");
         timeElement.textContent = "@" + report.generatedTime;
+        timeElement.classList.add("font-bold","text-sm")
+
         reportDiv.appendChild(timeElement);
 
         // Add progress report content
@@ -65,10 +70,10 @@ function displayReports() {
         // Add button container div
         var buttonContainer = document.createElement("div");
         buttonContainer.id = "button-container"; // Add an id for styling
-
+        buttonContainer.classList.add("flex","justify-around","w-full")
         // Add copy button
         var copyButton = document.createElement("button");
-        copyButton.textContent = "Copy";
+        copyButton.innerHTML = "<ion-icon name='copy-outline'></ion-icon>";
         copyButton.classList.add("copy-button");
         copyButton.addEventListener("click", function () {
             copyPreviousReport(reportDiv);
@@ -77,7 +82,7 @@ function displayReports() {
 
         // Add delete button
         var deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
+        deleteButton.innerHTML = "<ion-icon name='trash-outline'></ion-icon>"
         deleteButton.classList.add("delete-button");
         deleteButton.addEventListener("click", function () {
             deleteReport(index);
@@ -86,7 +91,7 @@ function displayReports() {
 
         // Add update button
         var updateButton = document.createElement("button");
-        updateButton.textContent = "Update";
+        updateButton.innerHTML = "<ion-icon name='create-outline'></ion-icon>"
         updateButton.id = "update-btn"; // Add an id for reference
         updateButton.classList.add("update-button");
         updateButton.addEventListener("click", function () {

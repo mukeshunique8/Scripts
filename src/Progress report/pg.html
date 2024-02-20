@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Report</title>
+    <!-- <link rel="stylesheet" href="pg.css"> -->
+    <link rel="stylesheet" href="../output.css">
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/work-alt.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="logoPg.png"/>
+    <!-- <link rel="stylesheet" href="../scripts.css"> -->
+</head>
+
+<body class="flex bg-black flex-col max-w-screen-lg m-4 mx-auto p-4">
+    
+<main class=" p-4  h-fit flex flex-col md:flex-row justify-around items-center ">
+   
+   
+    <div class="left p-3 w-1/2 rounded  space-y-5 m-2 text-2xl">
+        <!-- Left column content -->
+        <div class="mb-3 font-custom  flex justify-around">
+            <input autofocus id="studentName"  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Student Name"  type="text">
+        </div>
+        
+
+        <div class="mb-3 font-custom flex justify-around">
+           
+            <input  id="topic"  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Lesson Objective"  type="text">
+        </div>
+
+
+        <div class="tutor my-4 flex justify-center space-x-3 w-full">
+
+            <button id="minus-btn"onclick="decrement1()">
+                <ion-icon class="text-red-700  text-5xl  hover:text-red-900" name="caret-down-outline"></ion-icon>
+            </button>
+            <h1 class="text-white" >ASSISTANCE</h1>
+            <button id="plus-btn" onclick="increment1()">
+                <ion-icon class="text-green-700 text-5xl  hover:text-green-900" name="caret-up-outline"></ion-icon>
+            </button>
+            <span class = "text-white" id="tutor-el">0</span>
+            
+        </div>
+
+
+        <div class="independent my-4 flex justify-center space-x-3 w-full">
+            <button id="minus-btn" onclick="decrement2()">
+                <ion-icon class="text-red-700 text-5xl  hover:text-red-900" name="caret-down-outline"></ion-icon>
+            </button>
+            <h1 class="text-white">INDEPENDENT</h1>
+            <button id="plus-btn" onclick="increment2()">
+                <ion-icon class="text-green-700 text-5xl  hover:text-green-900" name="caret-up-outline"></ion-icon>
+            </button>
+            <span class = "text-white" id="independent-el">0</span>
+        </div>
+        
+
+        <div class="exit my-4  flex justify-center space-x-3 w-full">
+            <button id="minus-btn" onclick="decrement3()">
+                <ion-icon class="text-red-700 text-5xl  hover:text-red-900" name="caret-down-outline"></ion-icon>
+            </button>
+            <h1 class="text-white">EXIT</h1>
+            <button id="plus-btn" onclick="increment3()">
+                <ion-icon class="text-green-700 text-5xl  hover:text-green-900" name="caret-up-outline"></ion-icon>
+            </button>
+            <span class = "text-white" id="exit-el">0</span>
+        </div>
+
+
+        <div class="exitPoints my-4 flex justify-center space-x-3 w-full">
+            <button id="minus-btn" onclick="decrement4()">
+                <ion-icon class="text-red-700 text-5xl  hover:text-red-900" name="caret-down-outline"></ion-icon>
+            </button>
+            <h1 class="text-white">EXIT POINTS</h1>
+            <button id="plus-btn" onclick="increment4()">
+                <ion-icon class="text-green-700 text-5xl  hover:text-green-900" name="caret-up-outline"></ion-icon>
+            </button>
+            <span class = "text-white" id="exitPoints-el">0</span>
+        </div>
+
+
+        <div class="bonus my-4 flex justify-center space-x-3 w-full">
+            <button id="minus-btn" onclick="decrement5()">
+                <ion-icon class="text-red-700 text-5xl  hover:text-red-900" name="caret-down-outline"></ion-icon>
+            </button>
+            <h1 class="text-white">BONUS</h1>
+            <button id="plus-btn" onclick="increment5()">
+                <ion-icon class="text-green-700 text-5xl  hover:text-green-900" name="caret-up-outline"></ion-icon>
+            </button>
+            <span class = "text-white" id="bonus-el">0</span>
+        </div>
+
+
+    </div>
+
+    <div class="right p-3 w-1/2 rounded items-center space-y-6 flex flex-col m-2 text-2xl">
+        <!-- Right column content -->
+        <div class="able mb-3 font-custom flex w-full justify-around">
+           
+            <input autofocus id="able-el"  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Able Part"  type="text">
+        </div>
+        
+        <div class="difficulty mb-3 font-custom w-full flex justify-around ">
+                   
+            <input autofocus id="difficulty-el"  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Difficulty Part"  type="text">
+            
+        </div>
+
+       <div class="flex my-6  justify-center items-center flex-col text-center">
+
+                <div class="flex-col md:flex  w-full justify-center items-center text-center mb-4 ">
+
+                    <div class=" w-full  flex mb-2 justify-center ">
+                      
+
+                        <input autofocus id="points-el"  class="points bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Points"  type="text">
+
+                    </div>
+
+                   
+
+                    <div class="w-full  flex  mb-3  justify-center">
+                        <input autofocus id="result-el"  readonly class="result cursor-not-allowed bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-2 text-center w-1/2 py-1 outline-none " placeholder="Result"  type="text">
+
+                        
+                    </div>
+
+                     <div class="w-full flex justify-around space-x-4">
+
+                        <button id="con-btn" onclick="concatenatedValues()"><ion-icon class="transition ease-in-out hover:-translate-y-1 hover:scale-130 duration-300 md hydrated text-blue-500" name="flash-outline"></ion-icon></button>
+                 
+                        <button id="copy-btn" onclick="copyText()"> <ion-icon class="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-130 duration-300 md hydrated text-green-600" name="copy-outline"></ion-icon></button>
+ 
+                    </div>
+
+
+                   </div>
+
+            <!-- <div class="progress-bar max-w-full rounded ">
+                <p class=" mastery-status rounded "></p>
+            </div> -->
+            <div class="progress-bar w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div id="mastery-status" class="h-2.5 rounded-full max-w-full"></div>
+            </div>
+            
+
+       
+
+       </div>
+
+
+   
+
+            <div class= " pgGenerator rounded flex w-full mt-3  bg-red-500">
+                
+                <textarea id="pgReport" class= " flex text-black p-3 h-[150px]  rounded w-full  text-sm"></textarea>
+                
+            </div>
+
+
+
+    </div>
+
+
+</main>
+
+<section class="  p-4 flex flex-col mt-10 justify-around items-center">
+ 
+  
+
+    <div class="previousReports flex flex-col w-full  justify-center items-center">
+        
+        
+        <p class= " bg-gradient-to-r from-fuchsia-500 to-teal-400 bg-clip-text text-transparent text-5xl text-center mb-8 p-2" >Previous Reports</p>
+
+            <div id="reports-container" class="flex flex-col items-center md:flex-row md:flex-wrap w-full justify-center">
+
+
+
+
+        </div>
+    </div>
+
+
+</section>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="pg1.js"></script>
+<script src="pg2.js"></script>
+</body>
+</html>
