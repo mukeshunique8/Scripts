@@ -173,6 +173,7 @@ a.colorpg{
 }
 
 
+
 /* Add more styles for other links as needed */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -232,17 +233,26 @@ P {
   border-radius: 10px;
   margin-bottom: 2px;
   margin: 0px 10px 10px 10px;
+  transition: all ease-in 70ms;
+}
+
+p:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 p button {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 25%;
   position: relative;
   left:10px;
+  background-color: white;
 }
 
-
+#pgReportlink a{
+  width:200px;
+}
 
 
 /*flicker animation alaert*/
@@ -700,9 +710,6 @@ button {
   background-color: green;
 }
 
-.chooseOption label{
-
-}
 
 input[type="radio" i] {
   width: 15px; /* Set the width of the radio button */
