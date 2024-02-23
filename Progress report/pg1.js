@@ -206,10 +206,15 @@ let resultPercentage = Math.round((exitPointsValue / (exitValue * 3)) * 100);
 
 if( input1 !=="" && input3 !== ""){
 
-
+    const  progressbarEl = document.getElementById("progress-bar")
+    
+    progressbarEl.classList.remove("invisible")
 
     var concatenated = input1+space+input2+space+quotes+input3+dot+quotes+space+input4+input5+input6+input7+input8;
     
+
+
+
 document.getElementById("pgReport").value = concatenated;
 
 // Calculate the result percentage

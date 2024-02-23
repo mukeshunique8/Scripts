@@ -47,53 +47,85 @@ function displayReports() {
     // Loop through the existing reports and create divs for each
     existingReports.forEach(function (report, index) {
         var reportDiv = document.createElement("div");
-        reportDiv.classList.add("previousReport", "rounded-lg","flex", "space-y-2","flex-col","p-3", "m-1","bg-white", "w-[450px]","h-[280px]","text-sm","backdrop-blur-lg");
+        reportDiv.classList.add("previousReport", "rounded-lg","flex", "space-y-4","flex-col","p-8", "m-1","bg-gray-100", "w-full","h-fit","text-sm","backdrop-blur-lg");
 
+
+
+
+        var reportheader = document.createElement("div")
+        reportheader.classList.add("flex","items-center","justify-between")
+        reportDiv.appendChild(reportheader)
+        
+       
+
+            
         // Add report header as h3 element
         var headerElement = document.createElement("h3");
         headerElement.textContent = report.header;
-        headerElement.classList.add("font-bold","text-blue-800","text-sm")
-        reportDiv.appendChild(headerElement);
+        headerElement.classList.add("font-semibold","text-blue-800","text-2xl","italic")
+        reportheader.appendChild(headerElement);
 
+        
         // Add generated time as h2 element
         var timeElement = document.createElement("h2");
-        timeElement.textContent = "@" + report.generatedTime;
-        timeElement.classList.add("font-bold","text-sm")
+        timeElement.textContent =  report.generatedTime;
+        timeElement.classList.add("font-bold","text-sm","italic")
 
-        reportDiv.appendChild(timeElement);
+        reportheader.appendChild(timeElement);
 
-        // Add progress report content
-        var progressElement = document.createElement("p");
-        progressElement.textContent = report.progressReport;
-        reportDiv.appendChild(progressElement);
+
+
+
+       // Add progress report content
+var progressElement = document.createElement("p");
+progressElement.textContent = report.progressReport;
+
+// Split the progress report text into words
+var words = progressElement.textContent.split(' ');
+
+// Wrap the first two words in a span with a custom class
+if (words.length >= 2) {
+    var spanElement = document.createElement("span");
+    spanElement.textContent = words[0] + " " + words[1]; // Concatenate the first two words
+    spanElement.classList.add("text-green-700"); // Add your custom class here
+    progressElement.innerHTML = spanElement.outerHTML + " " + words.slice(2).join(' '); // Join the remaining words after the first two words
+}
+
+reportDiv.appendChild(progressElement);
+
+
 
         // Add button container div
         var buttonContainer = document.createElement("div");
         buttonContainer.id = "button-container"; // Add an id for styling
-        buttonContainer.classList.add("flex","justify-around","w-full")
-        // Add copy button
-        var copyButton = document.createElement("button");
-        copyButton.innerHTML = "<ion-icon name='copy-outline'></ion-icon>";
-        copyButton.classList.add("copy-button");
-        copyButton.addEventListener("click", function () {
-            copyPreviousReport(reportDiv);
-        });
-        buttonContainer.appendChild(copyButton);
-
+        buttonContainer.classList.add("flex","justify-end","w-full","space-x-16")
+        
         // Add delete button
         var deleteButton = document.createElement("button");
-        deleteButton.innerHTML = "<ion-icon name='trash-outline'></ion-icon>"
-        deleteButton.classList.add("delete-button");
+        deleteButton.innerHTML = "<ion-icon size='large'  name='trash-outline'></ion-icon>"
+        deleteButton.classList.add("delete-button","hover:text-red-500");
         deleteButton.addEventListener("click", function () {
             deleteReport(index);
         });
         buttonContainer.appendChild(deleteButton);
 
+        
+        // Add copy button
+        var copyButton = document.createElement("button");
+        copyButton.innerHTML = "<ion-icon size='large'  name='copy-outline'></ion-icon>";
+        copyButton.classList.add("copy-button","hover:text-white","hover:bg-green-500","rounded-lg","p-2");
+        copyButton.addEventListener("click", function () {
+            copyPreviousReport(reportDiv);
+            alert("Previous Report Copied")
+        });
+        buttonContainer.appendChild(copyButton);
+
+        
         // Add update button
         var updateButton = document.createElement("button");
-        updateButton.innerHTML = "<ion-icon name='create-outline'></ion-icon>"
+        updateButton.innerHTML = "<ion-icon size='large' name='create-outline'></ion-icon>"
         updateButton.id = "update-btn"; // Add an id for reference
-        updateButton.classList.add("update-button");
+        updateButton.classList.add("update-button","hover:text-orange-600");
         updateButton.addEventListener("click", function () {
             // Get the progress report content associated with the clicked button
             var progressElement = reportDiv.querySelector("p");
