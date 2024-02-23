@@ -164,9 +164,9 @@ if((tutorValue ===1 && independentValue === 1)){
 
 
 if((ablePart.length > 0 && difficultyPart.length> 0)){
-    input5 =" The Student was able "+ablePart+" but faced difficulty with "+difficultyPart+"."
+    input5 =" The Student was able to "+ablePart+" but faced difficulty with "+difficultyPart+"."
 }else if(ablePart.length > 0){
-    input5 =" The Student was able "+ablePart+"."
+    input5 =" The Student was able to "+ablePart+"."
 } else if(difficultyPart.length> 0){
     input5 =" The Student faced difficulty "+difficultyPart+"."
 }
